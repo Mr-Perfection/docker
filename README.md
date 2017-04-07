@@ -55,3 +55,7 @@ Previously, I set an **ip address** to **docker.me** for convenience in `/etc/ho
 2. run public repo you created **docker run -d -p 80:80 --name static ${your repo}** ex) `docker run -d -p 80:80 --
 name project saintlee0127/static_nginx`
 3. check it out on **docker.me**
+
+## References
+https://www.youtube.com/watch?v=K6WER0oI-qs
+>>>>>>> 7c568bb71c2a2b8729412029b47e5bbc5b0ea3f2
