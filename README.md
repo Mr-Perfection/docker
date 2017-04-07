@@ -1,6 +1,8 @@
 # docker
 Learning Docker in depth
 
+![alt text](demo/docker_hub.png "Introduction")
+
 ## Basic Docker Commands:
 
 ```
@@ -37,10 +39,14 @@ $ docker rm web1 etc...
 2. initialize ```$(boot2docker shellinit)```
 3. paste it into **~./bash_profile** for automated initialization
 4. build a docker container **docker build -t ${your repo} .*
-5. run a docker container **docker run -d -p 80:80 --name static ${your repo}**
+5. run a docker container **docker run -d -p 80:80 --name project ${your repo}**
+
+![alt text](demo/running_container.png "running container")
 
 6. get ip address **boot2docker ip** and name it to **boot2docker.me** or whatever:) into
 `sudo vim /etc/hosts`.
+* It should look like this if set up properly.
+![alt text](demo/boot2docker.png "boot2docker")
 
 7. make changes to the application and redo **4-5** steps. Also, make sure to stop & delete previous docker process.
 
@@ -56,6 +62,9 @@ Previously, I set an **ip address** to **docker.me** for convenience in `/etc/ho
 name project saintlee0127/static_nginx`
 3. check it out on **docker.me**
 
+
+## Issues
+* I have found a weird issue that when I re-ran the docker container in development (boot2docker), it was rendering any changes I made to static files like html. But when I pushed and re-ran on production (digitalocean), the static files were not updated. I was not able to find why but I will look into the issue later on.
+
 ## References
 https://www.youtube.com/watch?v=K6WER0oI-qs
->>>>>>> 7c568bb71c2a2b8729412029b47e5bbc5b0ea3f2
