@@ -31,4 +31,27 @@ $ docker stop web2
 $ docker stop web3
 $ docker rm web1 etc...
 ```
-## References
+
+## How to build a container
+1. install [boot2docker](http://boot2docker.io/) and run ```boot2docker up```
+2. initialize ```$(boot2docker shellinit)```
+3. paste it into **~./bash_profile** for automated initialization
+4. build a docker container **docker build -t ${your repo} .*
+5. run a docker container **docker run -d -p 80:80 --name static ${your repo}**
+
+6. get ip address **boot2docker ip** and name it to **boot2docker.me** or whatever:) into
+`sudo vim /etc/hosts`.
+
+7. make changes to the application and redo **4-5** steps. Also, make sure to stop & delete previous docker process.
+
+8. After docker login, docker push `docker push ${your repo}`
+
+## Testing on Production server
+Currently, I am using [Digital Oceans](https://www.digitalocean.com/) as a hosting provider.
+I already added a droplet called **docker-test** to check out how it works in production mode.
+
+1. ssh `root@docker.me` and login to Ubuntu (virtual machine)
+Previously, I set an **ip address** to **docker.me** for convenience in `/etc/hosts`
+2. run public repo you created **docker run -d -p 80:80 --name static ${your repo}** ex) `docker run -d -p 80:80 --
+name project saintlee0127/static_nginx`
+3. check it out on **docker.me**
